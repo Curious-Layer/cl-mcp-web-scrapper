@@ -6,7 +6,7 @@
   "deploy": {
     "runtime": "V2",
     "numReplicas": 1,
-    "startCommand": "python youtube_mcp_server.py --transport streamable-http --host 0.0.0.0 --port 8080",
+    "startCommand": "python webscraper_mcp_server.py --transport streamable-http --host 0.0.0.0 --port 8080",
     "sleepApplication": false,
     "useLegacyStacker": false,
     "multiRegionConfig": {
