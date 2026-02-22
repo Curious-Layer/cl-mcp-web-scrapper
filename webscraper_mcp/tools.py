@@ -14,6 +14,18 @@ def register_tools(mcp: FastMCP) -> None:
         description="Scrape content from a web page given a URL and optional CSS selector.",
     )
     def scrape_page(url: str, selector: str | None = None) -> ScrapeResponse:
+        """Scrape a web page as full HTML or selected elements.
+
+        Args:
+            url: Fully qualified HTTP/HTTPS URL to fetch.
+            selector: Optional CSS selector. When provided, only matching elements are
+                returned as HTML strings.
+
+        Returns:
+            If `selector` is provided, returns `{url, data}` where `data` is a list of
+            matched element HTML strings. Otherwise returns `{url, title,
+            description, html}` for the full page.
+        """
         try:
             response = requests.get(url, headers=DEFAULT_HEADERS, timeout=10)
             response.raise_for_status()
