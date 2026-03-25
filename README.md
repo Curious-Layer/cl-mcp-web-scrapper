@@ -1,5 +1,3 @@
-# Web Scraper MCP Server
-
 **Extract content from web pages using CSS selectors.**
 
 A Model Context Protocol (MCP) server that exposes web scraping capabilities for extracting structured data from HTML pages.
