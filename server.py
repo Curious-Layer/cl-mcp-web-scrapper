@@ -6,6 +6,8 @@ from webscraper_mcp.tools import register_tools
 mcp = FastMCP("CL Web Scraper MCP Server")
 register_tools(mcp)
 
+# Expose ASGI app for hosting platform's (e.g. Vercel) Python runtime.
+app = mcp.http_app(path="/mcp", transport="streamable-http")
 
 if __name__ == "__main__":
     args = parse_args()
